@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DaikoBot</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="sidebar" id="panel">
+        <h2>Chats</h2>
+        <button class="newChat" title="Start a new chat" onclick="startNewChat()">New Chat</button>
+        <div id="chatList" style="display: flex; flex-direction: column; padding: 10px; gap: 8px;"></div>
+      </div>
+      <div class="main">
+        <div class="top-panel">
+          <button class="theme" title="Change theme" onclick="changeTheme()"><img id="theme-icon" src="/static/images/moon.png" style="width: 15px; height: 15px;" alt="Dark theme" /></button>
+          DaikoBot
+        </div>
+        <div class="chat-container" id="chat"></div>
+        <div class="input-area">
+          <input id="prompt" placeholder="Ask something" onkeydown="handleKey(event)" />
+          <button class="send" onclick="sendPrompt()">Send</button>
+        </div>
+      </div>
+    </div>
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>
