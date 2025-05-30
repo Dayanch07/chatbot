@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 html,
 body {
     margin: 0;
@@ -10,6 +14,8 @@ body {
     display: flex;
     height: 100vh;
     width: 100%;
+    flex-direction: column;
+    /* mobile-first */
 }
 
 body.dark {
@@ -82,7 +88,6 @@ body.dark .top-panel {
     width: 20%;
     border-right: 1px solid #ccc;
     background-color: #fafafa;
-    /* optional */
 }
 
 .main {
@@ -235,5 +240,47 @@ button:hover {
     100% {
         transform: translateY(0);
         opacity: 0.3;
+    }
+}
+
+/* Desktop override */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 767px) {
+    .sidebar {
+        display: none;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .message {
+        max-width: 90%;
+        font-size: 14px;
+    }
+
+    .input-area {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+
+    button.send {
+        margin-left: 0;
+        font-size: 14px;
+    }
+
+    .top-panel {
+        font-size: 16px;
+        padding: 0 10px;
     }
 }
